@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 
 export const newUser=async(req,res)=>{
     const{
+        name,
         user,
         email,
         password,}=req.body;
@@ -23,6 +24,7 @@ export const newUser=async(req,res)=>{
         };
 
         const nuevoUsuario = new usuarios({
+            name,
             user,
             email,
             password,

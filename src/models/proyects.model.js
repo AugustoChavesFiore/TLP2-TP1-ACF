@@ -12,11 +12,7 @@ export const Proyects=sequelize.define('Proyect',{
         allowNull:false
     },
     userId:{
-        type:DataTypes.STRING,
-        allowNull:false
-    },
-    taskId:{
-        type:DataTypes.STRING,
+        type:DataTypes.INTEGER,
         allowNull:false
     },
     createdAt: {

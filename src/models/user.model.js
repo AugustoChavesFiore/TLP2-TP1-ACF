@@ -47,6 +47,6 @@ import { sequelize } from "../database.js";
 
 );
 
-usuarios.sync({force:true}).then(()=>{
+usuarios.sync({force:false}).then(()=>{
     console.log('Tabla de usuarios creada');
 });

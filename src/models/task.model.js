@@ -1,7 +1,7 @@
 import { sequelize } from "../database.js";
 import DataTypes from 'sequelize';
 
-export const taks=sequelize.define('Task',{
+export const tasks=sequelize.define('Task',{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
@@ -34,12 +34,12 @@ export const taks=sequelize.define('Task',{
     createdAt: true,
     updatedAt: true,
     deletedAt: true,
-    tableName: 'Taks'}
+    tableName: 'tasks'}
 
 );
 
 
-taks.sync({force:true}).then(()=>{
+tasks.sync({force:false}).then(()=>{
     console.log('Tabla de tareas creada');
 
 })

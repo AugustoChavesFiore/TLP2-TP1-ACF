@@ -4,7 +4,7 @@ import 'dotenv/config';
 import { conectarDB } from './database.js';
 import routes from './routes/user.routes.js';
 import routesProyects from './routes/proyects.routes.js';     
-
+import { relationships} from './models/relations.model.js';
 
 const app=express();
 
@@ -20,6 +20,7 @@ app.use(routes);
 app.use(routesProyects);
 
 conectarDB();
+relationships();
 app.listen(port,()=>{
     
     console.log(`server on http://localhost:${port}`);
