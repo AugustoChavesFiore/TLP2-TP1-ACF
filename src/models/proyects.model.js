@@ -1,7 +1,7 @@
 import { sequelize } from "../database.js";
+import { DataTypes } from "sequelize";
 
-
-export const proyects=sequelize.define('Proyect',{
+export const Proyects=sequelize.define('Proyect',{
     id:{
         type:DataTypes.INTEGER,
         primaryKey:true,
@@ -22,12 +22,12 @@ export const proyects=sequelize.define('Proyect',{
     createdAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.literal('CURRENT_TIMESTAMP')
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
     updatedAt: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: DataTypes.literal('CURRENT_TIMESTAMP')
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
     deletedAt: {
         type: DataTypes.DATE,
@@ -42,6 +42,6 @@ export const proyects=sequelize.define('Proyect',{
 
 );
 
-proyects.sync({force:false} ).then(()=>{
+Proyects.sync({force:false} ).then(()=>{
     console.log('Tabla de proyects creada');
 })

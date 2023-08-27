@@ -26,8 +26,14 @@ export const obtenerProyects=async(req,res)=>{
     }
 }
 export const obtenerProyect=async(req,res)=>{
+    const {id,userId}=req.params;
     try {
-        const proyect= await Proyects.findByPk(req.params.id);
+        const proyect= await Proyects.findOne({
+            where:{
+                id,
+                userId
+            }
+        });
         if(!proyect){
             return res.status(404).json({
                 message: 'Proyecto no encontrado'

@@ -8,6 +8,10 @@ import { sequelize } from "../database.js";
         primaryKey:true,
         autoIncrement:true
     },
+    name:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
     user:{
         type:DataTypes.STRING,
         allowNull:false
